@@ -2,7 +2,7 @@ import argparse
 from importlib import import_module
 
 
-__version__ = '0.4.0'
+__version__ = '0.4.1'
 
 
 class Hellflame:
@@ -58,7 +58,7 @@ def main():
     result = hellflame.run()
     del hellflame
 
-    if result>0:
+    if result is not None and result>0:
         import os
         import signal
         os.kill(os.getpid(), signal.SIGTERM)
